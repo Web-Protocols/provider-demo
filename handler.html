@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Web Whisper Handler</title>
+
+  <script src="https://rawgit.com/csuwildcat/ProtocolWorker/gh-pages/dist/build.js"></script>
+
+  <script>
+
+    window.addEventListener('protocolrequest', function(event){
+      if (event.detail['@type'] = 'Comment') {
+        localStorage.whisper = event.detail.comment;
+        event.detail.resolve();
+      }
+      if (event.detail['@type'] = 'Search') {
+        event.detail.resolve(localStorage.whisper);
+      }
+    });
+
+  </script>
+</head>
+
+<body></body>
+
+</html>

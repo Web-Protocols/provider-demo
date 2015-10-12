@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Web Whisper Provider</title>
+</head>
+
+<body>
+
+<button>Add Provider</button>
+
+<script src="https://rawgit.com/csuwildcat/ProtocolWorker/gh-pages/dist/build.js"></script>
+<script>
+
+  document.querySelector('button').addEventListener('click', function(){
+    navigator.registerProtocolHandler('web+whisper', 'protocol-provider-demo.github.io?%s', 'Whisper Demo Provider');
+  });
+</script>
+
+</body>
+
+</html>
