@@ -9,6 +9,7 @@
   <script>
 
     window.addEventListener('protocolrequest', function(event){
+      console.log(event);
       if (event.detail['@type'] == 'Comment') {
         localStorage.whisper = event.detail.comment;
         event.detail.resolve();
