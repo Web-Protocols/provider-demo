@@ -9,11 +9,11 @@
   <script>
 
     window.addEventListener('protocolrequest', function(event){
-      if (event.detail['@type'] = 'Comment') {
+      if (event.detail['@type'] == 'Comment') {
         localStorage.whisper = event.detail.comment;
         event.detail.resolve();
       }
-      if (event.detail['@type'] = 'Search') {
+      if (event.detail['@type'] == 'Search') {
         event.detail.resolve(localStorage.whisper);
       }
     });
